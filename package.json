@@ -1,0 +1,44 @@
+{
+  "name": "@heraclius/backend-storage",
+  "version": "0.1.0",
+  "description": "提供了基于 Node.js 开发的 RESTful 接口，可以方便地进行数据的增删改查（CRUD）操作以及高效的数据搜索",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@heraclius/external-deps-plugin": "^0.1.1",
+    "@heraclius/query": "^0.1.0",
+    "@types/koa": "^2.15.0",
+    "@types/koa-router": "^7.4.8",
+    "@types/node": "^20.14.10",
+    "@types/uuid": "^10.0.0",
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "koa-router": "^12.0.1",
+    "sqlite3": "^5.1.7",
+    "unplugin-swc": "^1.5.1",
+    "uuid": "^10.0.0",
+    "vite": "^5.3.3",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "www"
+  ],
+  "peerDependencies": {
+    "@heraclius/query": "^0.1.0",
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "koa-router": "^12.0.1",
+    "sqlite3": "^5.1.7",
+    "uuid": "^10.0.0"
+  }
+}

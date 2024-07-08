@@ -10,6 +10,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
+    "@heraclius/collection": "^0.2.0",
     "@heraclius/external-deps-plugin": "^0.1.1",
     "@heraclius/query": "^0.1.0",
     "@types/koa": "^2.15.0",
@@ -19,7 +20,6 @@
     "koa": "^2.15.3",
     "koa-body": "^6.0.1",
     "koa-router": "^12.0.1",
-    "sqlite3": "^5.1.7",
     "unplugin-swc": "^1.5.1",
     "uuid": "^10.0.0",
     "vite": "^5.3.3",
@@ -34,11 +34,11 @@
     "www"
   ],
   "peerDependencies": {
+    "@heraclius/collection": "^0.2.0",
     "@heraclius/query": "^0.1.0",
     "koa": "^2.15.3",
     "koa-body": "^6.0.1",
     "koa-router": "^12.0.1",
-    "sqlite3": "^5.1.7",
     "uuid": "^10.0.0"
   }
 }

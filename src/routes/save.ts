@@ -14,6 +14,8 @@ router.post("/save", async (context, next) => {
   if (body.returnResult) {
     context.response.body = result
     context.response.type = "application/json"
+  } else {
+    context.response.body = ""
   }
-  next()
+  await next()
 })

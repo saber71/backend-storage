@@ -10,5 +10,6 @@ router.post("/update", async (context, next) => {
   const body: Body = context.request.body
   const collection = getCollection(body.name, body.type)
   await collection.update(...body.value)
+  context.response.body = ""
   next()
 })

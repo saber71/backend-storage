@@ -32,7 +32,7 @@
   },
   "files": [
     "dist",
-    "www"
+    "www.js"
   ],
   "peerDependencies": {
     "@heraclius/collection": "latest",

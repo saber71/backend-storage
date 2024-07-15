@@ -23,7 +23,8 @@ function getCollectionCache(type: CollectionType) {
   return memoryCollections
 }
 
-export function getCollection(name: string, type: CollectionType = "sql") {
+export function getCollection(name: string, type?: CollectionType | null) {
+  if (!type) type = "sql"
   const cache = getCollectionCache(type)
   let result = cache[name]
   if (!result) result = cache[name] = new classMap[type](name, true) as any

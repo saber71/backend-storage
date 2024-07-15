@@ -14,6 +14,4 @@ app
   )
   .use(router.routes())
   .use(router.allowedMethods())
-
-export * from "./routes"
-export * from "./collections"
+  .listen(10000)

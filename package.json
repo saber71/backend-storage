@@ -31,8 +31,7 @@
     "access": "public"
   },
   "files": [
-    "dist",
-    "www.js"
+    "dist"
   ],
   "peerDependencies": {
     "@heraclius/collection": "^0.2.0",

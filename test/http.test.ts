@@ -1,6 +1,6 @@
 import { httpTest, setDefaultAxiosConfig } from "@heraclius/http-test"
 import { describe, test } from "vitest"
-import "../www.js"
+import "../src"
 
 setDefaultAxiosConfig({
   baseURL: "http://localhost:10000"

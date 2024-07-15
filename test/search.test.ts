@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest"
-import { getCollection, handleSearch } from "../src"
+import { getCollection } from "../src/collections"
+import { handleSearch } from "../src/routes"
 
 const collection = getCollection("test", "memory")
 const collection2 = getCollection("test2", "memory")

@@ -1,15 +1,16 @@
 import { httpTest, setDefaultAxiosConfig } from "@heraclius/http-test"
+import "@heraclius/backend-bridge/dist/www.js"
 import { describe, test } from "vitest"
 import "../src"
 
 setDefaultAxiosConfig({
-  baseURL: "http://localhost:10000"
+  baseURL: "http://localhost:10001"
 })
 
 describe.sequential("http", () => {
   test("save", async () => {
-    await httpTest(() => ({
-      url: "/save",
+    await httpTest({
+      url: "/storage/save",
       method: "post",
       data: {
         name: "test",
@@ -20,7 +21,7 @@ describe.sequential("http", () => {
         ],
         returnResult: true
       }
-    }))
+    })
       .expectBody([
         { name: "heraclius", age: 18, _id: "1" },
         { name: "heraclius", age: 28, _id: "2" }
@@ -31,7 +32,7 @@ describe.sequential("http", () => {
 
   test("update", async () => {
     await httpTest(() => ({
-      url: "/update",
+      url: "/storage/update",
       method: "post",
       data: {
         name: "test",
@@ -45,7 +46,7 @@ describe.sequential("http", () => {
 
   test("delete", async () => {
     await httpTest(() => ({
-      url: "/delete",
+      url: "/storage/delete",
       method: "post",
       data: {
         name: "test",
@@ -67,7 +68,7 @@ describe.sequential("http", () => {
 
   test("search", async () => {
     await httpTest(() => ({
-      url: "/search",
+      url: "/storage/search",
       method: "post",
       data: {
         name: "test",
@@ -89,7 +90,7 @@ describe.sequential("http", () => {
 
   test("get-by-id", async () => {
     await httpTest(() => ({
-      url: "/get",
+      url: "/storage/get",
       method: "get",
       params: {
         name: "test",

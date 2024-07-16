@@ -10,6 +10,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
+    "@heraclius/backend-bridge": "^0.7.1",
     "@heraclius/collection": "^0.2.0",
     "@heraclius/external-deps-plugin": "^0.1.1",
     "@heraclius/http-test": "^0.2.0",
@@ -34,6 +35,7 @@
     "dist"
   ],
   "peerDependencies": {
+    "@heraclius/backend-bridge": "^0.7.1",
     "@heraclius/collection": "^0.2.0",
     "@heraclius/query": "^0.1.0",
     "koa": "^2.15.3",

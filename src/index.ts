@@ -9,5 +9,3 @@ export const app = new Koa()
 app.use(koaBody()).use(router.routes()).use(router.allowedMethods()).listen(10000)
 
 await BridgeAPI.connect("storage", "http://localhost:10000")
-
-console.log("start", "http://localhost:10000")

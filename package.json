@@ -1,6 +1,6 @@
 {
   "name": "@heraclius/backend-storage",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "提供了基于 Node.js 开发的 RESTful 接口，可以方便地进行数据的增删改查（CRUD）操作以及高效的数据搜索",
   "type": "module",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   "devDependencies": {
     "@heraclius/backend-bridge": "^0.7.2",
     "@heraclius/collection": "^0.2.0",
-    "@heraclius/external-deps-plugin": "^0.1.1",
+    "@heraclius/external-deps-plugin": "^1.0.0",
     "@heraclius/http-test": "^0.2.0",
     "@heraclius/query": "^0.1.0",
     "@types/koa": "^2.15.0",

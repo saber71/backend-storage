@@ -9,20 +9,20 @@ importers:
   .:
     devDependencies:
       '@heraclius/backend-bridge':
-        specifier: ^1.0.0
-        version: 1.0.0(axios@1.7.2)(http-proxy-middleware@3.0.0)(koa-body@6.0.1)(koa-connect@2.1.0)(koa-router@12.0.1)(koa@2.15.3)(toad-scheduler@3.0.1)
+        specifier: ^1.1.0
+        version: 1.1.0(axios@1.7.2)(http-proxy-middleware@3.0.0)(koa-body@6.0.1)(koa-connect@2.1.0)(koa-router@12.0.1)(koa@2.15.3)(toad-scheduler@3.0.1)
       '@heraclius/collection':
-        specifier: ^1.0.0
-        version: 1.0.0(@heraclius/js-tools@0.1.0)(@heraclius/query@1.0.0(deep-equal@1.0.1))(keyv-file@0.3.1)(keyv@4.5.4)(sql.js@1.10.3)(uuid@10.0.0)
+        specifier: ^1.1.0
+        version: 1.1.0(@heraclius/js-tools@1.1.0)(@heraclius/query@1.1.0(deep-equal@1.0.1))(keyv-file@0.3.1)(keyv@4.5.4)(sql.js@1.10.3)(uuid@10.0.0)
       '@heraclius/external-deps-plugin':
-        specifier: ^1.0.0
-        version: 1.0.0(vite@5.3.4(@types/node@20.14.11))
+        specifier: ^1.1.0
+        version: 1.1.0(vite@5.3.4(@types/node@20.14.11))
       '@heraclius/http-test':
-        specifier: ^1.0.0
-        version: 1.0.0(axios-cookiejar-support@5.0.2(axios@1.7.2)(tough-cookie@4.1.4))(axios@1.7.2)(tough-cookie@4.1.4)(vitest@2.0.3(@types/node@20.14.11))
+        specifier: ^1.1.0
+        version: 1.1.0(axios-cookiejar-support@5.0.2(axios@1.7.2)(tough-cookie@4.1.4))(axios@1.7.2)(tough-cookie@4.1.4)(vitest@2.0.3(@types/node@20.14.11))
       '@heraclius/query':
-        specifier: ^1.0.0
-        version: 1.0.0(deep-equal@1.0.1)
+        specifier: ^1.1.0
+        version: 1.1.0(deep-equal@1.0.1)
       '@types/koa':
         specifier: ^2.15.0
         version: 2.15.0
@@ -224,8 +224,8 @@ packages:
   '@hapi/bourne@3.0.0':
     resolution: {integrity: sha512-Waj1cwPXJDucOib4a3bAISsKJVb15MKi9IvmTI/7ssVEm6sywXGjVJDhl6/umt1pK1ZS7PacXU3A1PmFKHEZ2w==}
 
-  '@heraclius/backend-bridge@1.0.0':
-    resolution: {integrity: sha512-SDi9sujrQH1qKD8p7kveX7mYCp0eNYmn+XGvTxj5ls1s+1+Htcxz3ik8+BkYLmUNKef+Y0S+lNaNz7h7E5HjFg==}
+  '@heraclius/backend-bridge@1.1.0':
+    resolution: {integrity: sha512-lV0r9nE8zIYOYTJ/HO57E4kRTE7eNXZ1JqvLnrMyHzSoplzdrdln3/QTZLF+Pu5+dmj+dQUxZgAkRGvM/fBIkg==}
     peerDependencies:
       axios: ^1.7.2
       http-proxy-middleware: ^3.0.0
@@ -235,34 +235,34 @@ packages:
       koa-router: ^12.0.1
       toad-scheduler: ^3.0.1
 
-  '@heraclius/collection@1.0.0':
-    resolution: {integrity: sha512-wD8vdIJ+OFpRq5XbjCm/Pdw5I3yfqimtuclJ1Yoaxrj5RLor0kycdTvbM7nvOWeE5fsZZVaCNXsRxcKjaVkgzA==}
+  '@heraclius/collection@1.1.0':
+    resolution: {integrity: sha512-CBxAUex35dq/JoixlsWPDFxuLqWQygHHy8mCJO4D8KSrsloYgTKU8EWxHfPUGWo4MeY/HvafUeEmMh/RDiNqnA==}
     peerDependencies:
-      '@heraclius/js-tools': ^0.1.0
-      '@heraclius/query': ^0.1.0
+      '@heraclius/js-tools': ^1.0.0
+      '@heraclius/query': ^1.0.0
       keyv: ^4.5.4
       keyv-file: ^0.3.1
       sql.js: ^1.10.3
       uuid: ^10.0.0
 
-  '@heraclius/external-deps-plugin@1.0.0':
-    resolution: {integrity: sha512-jtQFKge1cd3zjWFxT4T+YCeJzo/TYz+AGRcDIQtBGgE3ZQt3RcGVNF+R4p7MI8t3MYGIH+Wxf7cLf02XzaqwNQ==}
+  '@heraclius/external-deps-plugin@1.1.0':
+    resolution: {integrity: sha512-soBSPW5jrLgp3RcrtmoDXOEx7QoHg2qPdx2d3lrq+MKv5VsYOh4qgUkf57PbeLNwvFJc7nBitCrjkUzTypxD+A==}
     peerDependencies:
       vite: ^5.3.3
 
-  '@heraclius/http-test@1.0.0':
-    resolution: {integrity: sha512-Oujg4vWJoqDUc+5lqSNDs5FXq7hnAmIV/1dp+DNT48yd7QA87d6pQW+zV3TcngI6tIWKFajghmuLulr0YtV5Uw==}
+  '@heraclius/http-test@1.1.0':
+    resolution: {integrity: sha512-5RZw1yvrUV7nOJcAsNHhi7M5Q+ZncXhBITg3SkMOHJA8Ae4MpZP4YbemyltKX1vS+FbRDmyculP18Iv+srJjcA==}
     peerDependencies:
       axios: ^1.7.2
       axios-cookiejar-support: ^5.0.2
       tough-cookie: ^4.1.4
       vitest: ^2.0.2
 
-  '@heraclius/js-tools@0.1.0':
-    resolution: {integrity: sha512-Ymp2ay3SjRdlXdYi3oWHPa4hvr8vhdOuXMzcWtgqcvn+atdt7HOkNsyMVHcz4NOFYkibxbgxZjkeDqV8oCpyNQ==}
+  '@heraclius/js-tools@1.1.0':
+    resolution: {integrity: sha512-kvii3PNWlH8rpIpB/aCG4xHURkA315grh9v1jm4tv3B6/AaRDWX22inGEUaX21MUYpKZb7bsMjI0t66Gm43+dA==}
 
-  '@heraclius/query@1.0.0':
-    resolution: {integrity: sha512-MBZGCC2sh/JRIjaXkL0fe0/MNJxlY6Qq82r0N7Z2Nk1F+BQh+RuxUv50gBYZ6mUKqAW3ee5TPTlFnCJbE1dEkQ==}
+  '@heraclius/query@1.1.0':
+    resolution: {integrity: sha512-v5WmOMp6h1s0TRuJyg65sadstLeDE0k1LtlF01LtxAVDE/t59QpdK6K9m7TtNOJJ9WXPusnD5GH56CqZ3YzX9g==}
     peerDependencies:
       deep-equal: ^2.2.3
 
@@ -585,11 +585,11 @@ packages:
   '@volar/typescript@1.11.1':
     resolution: {integrity: sha512-iU+t2mas/4lYierSnoFOeRFQUhAEMgsFuQxoxvwn5EdQopw43j+J27a4lt9LMInx1gLJBC6qL14WYGlgymaSMQ==}
 
-  '@vue/compiler-core@3.4.31':
-    resolution: {integrity: sha512-skOiodXWTV3DxfDhB4rOf3OGalpITLlgCeOwb+Y9GJpfQ8ErigdBUHomBzvG78JoVE8MJoQsb+qhZiHfKeNeEg==}
+  '@vue/compiler-core@3.4.32':
+    resolution: {integrity: sha512-8tCVWkkLe/QCWIsrIvExUGnhYCAOroUs5dzhSoKL5w4MJS8uIYiou+pOPSVIOALOQ80B0jBs+Ri+kd5+MBnCDw==}
 
-  '@vue/compiler-dom@3.4.31':
-    resolution: {integrity: sha512-wK424WMXsG1IGMyDGyLqB+TbmEBFM78hIsOJ9QwUVLGrcSk0ak6zYty7Pj8ftm7nEtdU/DGQxAXp0/lM/2cEpQ==}
+  '@vue/compiler-dom@3.4.32':
+    resolution: {integrity: sha512-PbSgt9KuYo4fyb90dynuPc0XFTfFPs3sCTbPLOLlo+PrUESW1gn/NjSsUvhR+mI2AmmEzexwYMxbHDldxSOr2A==}
 
   '@vue/language-core@1.8.27':
     resolution: {integrity: sha512-L8Kc27VdQserNaCUNiSFdDl9LWT24ly8Hpwf1ECy3aFb9m6bDhBGQYOujDm21N7EW3moKIOKEanQwe1q5BK+mA==}
@@ -599,8 +599,8 @@ packages:
       typescript:
         optional: true
 
-  '@vue/shared@3.4.31':
-    resolution: {integrity: sha512-Yp3wtJk//8cO4NItOPpi3QkLExAr/aLBGZMmTtW9WpdwBCJpRM6zj9WgWktXAl8IDIozwNMByT45JP3tO3ACWA==}
+  '@vue/shared@3.4.32':
+    resolution: {integrity: sha512-ep4mF1IVnX/pYaNwxwOpJHyBtOMKWoKZMbnUyd+z0udqIxLUh7YCCd/JfDna8aUrmnG9SFORyIq2HzEATRrQsg==}
 
   accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
@@ -1607,7 +1607,7 @@ snapshots:
 
   '@hapi/bourne@3.0.0': {}
 
-  '@heraclius/backend-bridge@1.0.0(axios@1.7.2)(http-proxy-middleware@3.0.0)(koa-body@6.0.1)(koa-connect@2.1.0)(koa-router@12.0.1)(koa@2.15.3)(toad-scheduler@3.0.1)':
+  '@heraclius/backend-bridge@1.1.0(axios@1.7.2)(http-proxy-middleware@3.0.0)(koa-body@6.0.1)(koa-connect@2.1.0)(koa-router@12.0.1)(koa@2.15.3)(toad-scheduler@3.0.1)':
     dependencies:
       axios: 1.7.2
       http-proxy-middleware: 3.0.0
@@ -1617,29 +1617,29 @@ snapshots:
       koa-router: 12.0.1
       toad-scheduler: 3.0.1
 
-  '@heraclius/collection@1.0.0(@heraclius/js-tools@0.1.0)(@heraclius/query@1.0.0(deep-equal@1.0.1))(keyv-file@0.3.1)(keyv@4.5.4)(sql.js@1.10.3)(uuid@10.0.0)':
+  '@heraclius/collection@1.1.0(@heraclius/js-tools@1.1.0)(@heraclius/query@1.1.0(deep-equal@1.0.1))(keyv-file@0.3.1)(keyv@4.5.4)(sql.js@1.10.3)(uuid@10.0.0)':
     dependencies:
-      '@heraclius/js-tools': 0.1.0
-      '@heraclius/query': 1.0.0(deep-equal@1.0.1)
+      '@heraclius/js-tools': 1.1.0
+      '@heraclius/query': 1.1.0(deep-equal@1.0.1)
       keyv: 4.5.4
       keyv-file: 0.3.1
       sql.js: 1.10.3
       uuid: 10.0.0
 
-  '@heraclius/external-deps-plugin@1.0.0(vite@5.3.4(@types/node@20.14.11))':
+  '@heraclius/external-deps-plugin@1.1.0(vite@5.3.4(@types/node@20.14.11))':
     dependencies:
       vite: 5.3.4(@types/node@20.14.11)
 
-  '@heraclius/http-test@1.0.0(axios-cookiejar-support@5.0.2(axios@1.7.2)(tough-cookie@4.1.4))(axios@1.7.2)(tough-cookie@4.1.4)(vitest@2.0.3(@types/node@20.14.11))':
+  '@heraclius/http-test@1.1.0(axios-cookiejar-support@5.0.2(axios@1.7.2)(tough-cookie@4.1.4))(axios@1.7.2)(tough-cookie@4.1.4)(vitest@2.0.3(@types/node@20.14.11))':
     dependencies:
       axios: 1.7.2
       axios-cookiejar-support: 5.0.2(axios@1.7.2)(tough-cookie@4.1.4)
       tough-cookie: 4.1.4
       vitest: 2.0.3(@types/node@20.14.11)
 
-  '@heraclius/js-tools@0.1.0': {}
+  '@heraclius/js-tools@1.1.0': {}
 
-  '@heraclius/query@1.0.0(deep-equal@1.0.1)':
+  '@heraclius/query@1.1.0(deep-equal@1.0.1)':
     dependencies:
       deep-equal: 1.0.1
 
@@ -1982,25 +1982,25 @@ snapshots:
       '@volar/language-core': 1.11.1
       path-browserify: 1.0.1
 
-  '@vue/compiler-core@3.4.31':
+  '@vue/compiler-core@3.4.32':
     dependencies:
       '@babel/parser': 7.24.8
-      '@vue/shared': 3.4.31
+      '@vue/shared': 3.4.32
       entities: 4.5.0
       estree-walker: 2.0.2
       source-map-js: 1.2.0
 
-  '@vue/compiler-dom@3.4.31':
+  '@vue/compiler-dom@3.4.32':
     dependencies:
-      '@vue/compiler-core': 3.4.31
-      '@vue/shared': 3.4.31
+      '@vue/compiler-core': 3.4.32
+      '@vue/shared': 3.4.32
 
   '@vue/language-core@1.8.27(typescript@5.4.2)':
     dependencies:
       '@volar/language-core': 1.11.1
       '@volar/source-map': 1.11.1
-      '@vue/compiler-dom': 3.4.31
-      '@vue/shared': 3.4.31
+      '@vue/compiler-dom': 3.4.32
+      '@vue/shared': 3.4.32
       computeds: 0.0.1
       minimatch: 9.0.5
       muggle-string: 0.3.1
@@ -2009,7 +2009,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.4.2
 
-  '@vue/shared@3.4.31': {}
+  '@vue/shared@3.4.32': {}
 
   accepts@1.3.8:
     dependencies:

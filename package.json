@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "提供了基于 Node.js 开发的 RESTful 接口，可以方便地进行数据的增删改查（CRUD）操作以及高效的数据搜索",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/www.js",
   "scripts": {
     "build": "vite build",
     "watch": "vite build --watch",
@@ -11,7 +11,7 @@
     "start": "node dist/www.js"
   },
   "devDependencies": {
-    "@heraclius/backend-bridge": "^0.7.2",
+    "@heraclius/backend-bridge": "^1.0.0",
     "@heraclius/collection": "^1.0.0",
     "@heraclius/external-deps-plugin": "^1.0.0",
     "@heraclius/http-test": "^1.0.0",

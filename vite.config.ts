@@ -1,7 +1,7 @@
 import { externalDepsPlugin } from "@heraclius/external-deps-plugin"
+import { resolve } from "path"
 import swc from "unplugin-swc"
 import { defineConfig } from "vite"
-import { resolve } from "path"
 import dtsPlugin from "vite-plugin-dts"
 
 export default defineConfig({
@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      fileName: "index",
+      fileName: "www",
       formats: ["es"]
     }
   }

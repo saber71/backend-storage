@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@heraclius/backend-bridge':
-        specifier: ^0.7.2
-        version: 0.7.2(axios@1.7.2)(http-proxy-middleware@3.0.0)(koa-body@6.0.1)(koa-connect@2.1.0)(koa-router@12.0.1)(koa@2.15.3)(toad-scheduler@3.0.1)
+        specifier: ^1.0.0
+        version: 1.0.0(axios@1.7.2)(http-proxy-middleware@3.0.0)(koa-body@6.0.1)(koa-connect@2.1.0)(koa-router@12.0.1)(koa@2.15.3)(toad-scheduler@3.0.1)
       '@heraclius/collection':
         specifier: ^1.0.0
         version: 1.0.0(@heraclius/js-tools@0.1.0)(@heraclius/query@1.0.0(deep-equal@1.0.1))(keyv-file@0.3.1)(keyv@4.5.4)(sql.js@1.10.3)(uuid@10.0.0)
@@ -224,8 +224,8 @@ packages:
   '@hapi/bourne@3.0.0':
     resolution: {integrity: sha512-Waj1cwPXJDucOib4a3bAISsKJVb15MKi9IvmTI/7ssVEm6sywXGjVJDhl6/umt1pK1ZS7PacXU3A1PmFKHEZ2w==}
 
-  '@heraclius/backend-bridge@0.7.2':
-    resolution: {integrity: sha512-Veml84fxmXvbXPK8sakyWS2OdzIB3H3AuakSo130tfQVvFnR8+aq30lEU3hCb3fF6umwhA8l7VgkJOVU02drjw==}
+  '@heraclius/backend-bridge@1.0.0':
+    resolution: {integrity: sha512-SDi9sujrQH1qKD8p7kveX7mYCp0eNYmn+XGvTxj5ls1s+1+Htcxz3ik8+BkYLmUNKef+Y0S+lNaNz7h7E5HjFg==}
     peerDependencies:
       axios: ^1.7.2
       http-proxy-middleware: ^3.0.0
@@ -1607,7 +1607,7 @@ snapshots:
 
   '@hapi/bourne@3.0.0': {}
 
-  '@heraclius/backend-bridge@0.7.2(axios@1.7.2)(http-proxy-middleware@3.0.0)(koa-body@6.0.1)(koa-connect@2.1.0)(koa-router@12.0.1)(koa@2.15.3)(toad-scheduler@3.0.1)':
+  '@heraclius/backend-bridge@1.0.0(axios@1.7.2)(http-proxy-middleware@3.0.0)(koa-body@6.0.1)(koa-connect@2.1.0)(koa-router@12.0.1)(koa@2.15.3)(toad-scheduler@3.0.1)':
     dependencies:
       axios: 1.7.2
       http-proxy-middleware: 3.0.0

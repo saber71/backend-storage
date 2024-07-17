@@ -14,10 +14,8 @@ router.get("/get", async (context, next) => {
   if (result) {
     context.response.body = result
     context.response.type = "application/json"
-  } else {
-    context.response.body = ""
   }
-  next()
+  await next()
 })
 
 interface JoinQuery extends BaseParam {

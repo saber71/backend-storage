@@ -8,6 +8,15 @@ setDefaultAxiosConfig({
 })
 
 describe.sequential("http", () => {
+  test("default collection type", async () => {
+    await httpTest({
+      url: "/storage/collection/default?type=file",
+      method: "post"
+    })
+      .expectBody("file")
+      .expectStatus(200)
+      .done()
+  })
   test("save", async () => {
     await httpTest({
       url: "/storage/save",

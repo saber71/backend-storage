@@ -23,8 +23,15 @@ function getCollectionCache(type: CollectionType) {
   return memoryCollections
 }
 
+let defaultType: CollectionType = "file"
+
+export function setDefaultType(type?: CollectionType | null) {
+  if (!type) throw new Error("type is null")
+  defaultType = type
+}
+
 export function getCollection(name: string, type?: CollectionType | null) {
-  if (!type) type = "sql"
+  if (!type) type = defaultType
   const cache = getCollectionCache(type)
   let result = cache[name]
   if (!result) result = cache[name] = new classMap[type](name, true) as any

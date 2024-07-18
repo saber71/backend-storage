@@ -19,3 +19,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+backend_storage.egg-info
+dist_node
+build

@@ -1,12 +1,9 @@
 import uuid
 from typing import Dict, Union
 
+import bridge
 import fastapi
-import requests
 from requests import Response
-
-# 存储系统的基本URL，用于所有HTTP请求
-option = {"baseUrl": "http://localhost:10001"}
 
 
 def __check_res__(
@@ -54,102 +51,6 @@ def __check_res__(
     return res
 
 
-def save(
-    data: dict,
-    status_code_mapper: Dict[int, int] = None,
-    check: bool = True,
-    tid: str = None,
-):
-    """
-    保存数据到存储系统。
-
-    :param tid: 事务id
-    :param status_code_mapper: 异常状态码映射表
-    :param check: 是否要检查请求是否成功
-    :param data: 需要保存的数据字典。
-    :return: HTTP请求的响应。
-    """
-    if status_code_mapper is None:
-        status_code_mapper = {}
-    return __check_res__(
-        requests.post(
-            option["baseUrl"] + "/storage/save", json=data, params={"tid": tid}
-        ),
-        status_code_mapper,
-        check,
-    )
-
-
-def search(
-    data: dict,
-    status_code_mapper: Dict[int, int] = None,
-    check: bool = True,
-    tid: str = None,
-):
-    """
-    根据条件搜索数据。
-
-    :param tid: 事务id
-    :param status_code_mapper: 异常状态码映射表
-    :param check: 是否要检查请求是否成功
-    :param data: 包含搜索条件的字典。
-    :return: HTTP请求的响应。
-    """
-    return __check_res__(
-        requests.post(
-            option["baseUrl"] + "/storage/search", json=data, params={"tid": tid}
-        ),
-        status_code_mapper,
-        check,
-    )
-
-
-def get(
-    params: dict,
-    status_code_mapper: Dict[int, int] = None,
-    check: bool = True,
-    tid: str = None,
-):
-    """
-    获取特定资源。
-
-    :param tid: 事务id
-    :param status_code_mapper: 异常状态码映射表
-    :param check: 是否要检查请求是否成功
-    :param params: 包含查询参数的字典。
-    :return: HTTP请求的响应。
-    """
-    return __check_res__(
-        requests.get(option["baseUrl"] + "/storage/get", params={**params, "tid": tid}),
-        status_code_mapper,
-        check,
-    )
-
-
-def delete(
-    data: dict,
-    status_code_mapper: Dict[int, int] = None,
-    check: bool = True,
-    tid: str = None,
-):
-    """
-    删除指定的数据。
-
-    :param tid: 事务id
-    :param status_code_mapper: 异常状态码映射表
-    :param check: 是否要检查请求是否成功
-    :param data: 包含删除条件的字典。
-    :return: HTTP请求的响应。
-    """
-    return __check_res__(
-        requests.post(
-            option["baseUrl"] + "/storage/delete", json=data, params={"tid": tid}
-        ),
-        status_code_mapper,
-        check,
-    )
-
-
 def set_default_collection_type(
     _type: str,
     status_code_mapper: Dict[int, int] = None,
@@ -166,8 +67,8 @@ def set_default_collection_type(
     :return: HTTP请求的响应。
     """
     return __check_res__(
-        requests.post(
-            option["baseUrl"] + "/storage/collection/default",
+        bridge.post(
+            "/storage/collection/default",
             params={"type": _type, "tid": tid},
         ),
         status_code_mapper,
@@ -191,8 +92,8 @@ def transaction_end(
     :return: HTTP请求的响应。
     """
     return __check_res__(
-        requests.post(
-            option["baseUrl"] + "/storage/transaction/end",
+        bridge.post(
+            "/storage/transaction/end",
             params={"tid": tid, "rollback": rollback},
         ),
         status_code_mapper,
@@ -232,16 +133,22 @@ class TransactionContext:
         else:
             transaction_end(self.__id__)  # 如果没有异常，标记事务正常结束
 
-    def save(self, data: dict, state_code_mapper: Dict[int, int] = None, check=True):
+    def save(self, data: dict, status_code_mapper: Dict[int, int] = None, check=True):
         """
         保存数据到数据库。
 
         :param data: 需要保存的数据字典。
-        :param state_code_mapper: 状态码映射器，用于将内部状态码映射为外部状态码。
+        :param status_code_mapper: 状态码映射器，用于将内部状态码映射为外部状态码。
         :param check: 是否进行数据完整性检查。
         :return: 保存操作的结果。
         """
-        return save(data, state_code_mapper, check, self.__id__)
+        if status_code_mapper is None:
+            status_code_mapper = {}
+        return __check_res__(
+            bridge.post("/storage/save", json=data, params={"tid": self.__id__}),
+            status_code_mapper,
+            check,
+        )
 
     def search(
         self,
@@ -257,7 +164,11 @@ class TransactionContext:
         :param check: 是否进行数据完整性检查。
         :return: 搜索结果。
         """
-        return search(data, status_code_mapper, check, self.__id__)
+        return __check_res__(
+            bridge.post("/storage/search", json=data, params={"tid": self.__id__}),
+            status_code_mapper,
+            check,
+        )
 
     def delete(
         self,
@@ -273,7 +184,11 @@ class TransactionContext:
         :param check: 是否进行数据完整性检查。
         :return: 删除操作的结果。
         """
-        return delete(data, status_code_mapper, check, self.__id__)
+        return __check_res__(
+            bridge.post("/storage/delete", json=data, params={"tid": self.__id__}),
+            status_code_mapper,
+            check,
+        )
 
     def get(
         self,
@@ -289,4 +204,16 @@ class TransactionContext:
         :param check: 是否进行数据完整性检查。
         :return: 获取的数据。
         """
-        return get(params, status_code_mapper, check, self.__id__)
+        return __check_res__(
+            bridge.get("/storage/get", params={**params, "tid": self.__id__}),
+            status_code_mapper,
+            check,
+        )
+
+
+__default_ctx__ = TransactionContext()
+
+save = __default_ctx__.save
+delete = __default_ctx__.delete
+search = __default_ctx__.search
+get = __default_ctx__.get

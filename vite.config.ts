@@ -11,6 +11,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/index.ts"),
       fileName: "www",
       formats: ["es"]
-    }
+    },
+    outDir: "dist_node"
   }
 })

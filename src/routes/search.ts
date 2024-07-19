@@ -5,11 +5,12 @@ import { router } from "./router.ts"
 
 interface UrlQueries extends BaseParam {
   id: string
+  tid?: string
 }
 
 router.get("/get", async (context, next) => {
   const params = context.query as any as UrlQueries
-  const collection = getCollection(params.name, params.type)
+  const collection = getCollection(params.name, params.type, params.tid)
   const result = await collection.getById(params.id)
   if (result) {
     context.response.body = result
@@ -38,13 +39,14 @@ interface Body extends BaseParam {
 
 router.post("/search", async (context, next) => {
   const body: Body = context.request.body
-  context.response.body = await handleSearch(body)
+  const query = context.request.query
+  context.response.body = await handleSearch(body, query.tid as any)
   context.response.type = "application/json"
-  next()
+  await next()
 })
 
-export async function handleSearch(body: Body) {
-  const collection = getCollection(body.name, body.type)
+export async function handleSearch(body: Body, tid?: string) {
+  const collection = getCollection(body.name, body.type, tid)
   const select = Select.from(collection)
   select.where(body.query)
   if (body.exposeFn) {

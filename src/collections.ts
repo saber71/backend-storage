@@ -1,4 +1,4 @@
-import { FileCollection, type ICollection, MemoryCollection, SqlCollection } from "@heraclius/collection"
+import { FileCollection, type ICollection, MemoryCollection, SqlCollection, Transaction } from "@heraclius/collection"
 
 const memoryCollections: Record<string, ICollection> = {}
 const fileCollections: Record<string, ICollection> = {}
@@ -30,10 +30,11 @@ export function setDefaultType(type?: CollectionType | null) {
   defaultType = type
 }
 
-export function getCollection(name: string, type?: CollectionType | null) {
+export function getCollection(name: string, type?: CollectionType | null, transactionId?: string) {
   if (!type) type = defaultType
   const cache = getCollectionCache(type)
   let result = cache[name]
   if (!result) result = cache[name] = new classMap[type](name, true) as any
+  if (transactionId) result = Transaction.get(transactionId, result)
   return result
 }

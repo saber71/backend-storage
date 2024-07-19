@@ -8,7 +8,8 @@ interface Body extends BaseParam {
 
 router.post("/update", async (context, next) => {
   const body: Body = context.request.body
-  const collection = getCollection(body.name, body.type)
+  const query = context.request.query
+  const collection = getCollection(body.name, body.type, query.tid as any)
   await collection.update(...body.value)
   context.response.body = ""
   next()

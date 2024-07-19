@@ -12,8 +12,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(axios@1.7.2)(http-proxy-middleware@3.0.0)(koa-body@6.0.1)(koa-connect@2.1.0)(koa-router@12.0.1)(koa@2.15.3)(toad-scheduler@3.0.1)
       '@heraclius/collection':
-        specifier: ^1.1.0
-        version: 1.1.0(@heraclius/js-tools@1.1.0)(@heraclius/query@1.1.0(deep-equal@1.0.1))(keyv-file@0.3.1)(keyv@4.5.4)(sql.js@1.10.3)(uuid@10.0.0)
+        specifier: ^1.2.0
+        version: 1.2.0(@heraclius/js-tools@1.1.0)(@heraclius/query@1.1.0(deep-equal@1.0.1))(keyv-file@0.3.1)(keyv@4.5.4)(sql.js@1.10.3)(uuid@10.0.0)
       '@heraclius/external-deps-plugin':
         specifier: ^1.1.0
         version: 1.1.0(vite@5.3.4(@types/node@20.14.11))
@@ -235,8 +235,8 @@ packages:
       koa-router: ^12.0.1
       toad-scheduler: ^3.0.1
 
-  '@heraclius/collection@1.1.0':
-    resolution: {integrity: sha512-CBxAUex35dq/JoixlsWPDFxuLqWQygHHy8mCJO4D8KSrsloYgTKU8EWxHfPUGWo4MeY/HvafUeEmMh/RDiNqnA==}
+  '@heraclius/collection@1.2.0':
+    resolution: {integrity: sha512-ATKurgmKZXTtydf1q1HZkjdiwxfQVoncH8ttRnG3Vz2h/94KaRqIuo8wbtaMrwgYkd4bD1vIuc6n77SBdHbxWg==}
     peerDependencies:
       '@heraclius/js-tools': ^1.0.0
       '@heraclius/query': ^1.0.0
@@ -1617,7 +1617,7 @@ snapshots:
       koa-router: 12.0.1
       toad-scheduler: 3.0.1
 
-  '@heraclius/collection@1.1.0(@heraclius/js-tools@1.1.0)(@heraclius/query@1.1.0(deep-equal@1.0.1))(keyv-file@0.3.1)(keyv@4.5.4)(sql.js@1.10.3)(uuid@10.0.0)':
+  '@heraclius/collection@1.2.0(@heraclius/js-tools@1.1.0)(@heraclius/query@1.1.0(deep-equal@1.0.1))(keyv-file@0.3.1)(keyv@4.5.4)(sql.js@1.10.3)(uuid@10.0.0)':
     dependencies:
       '@heraclius/js-tools': 1.1.0
       '@heraclius/query': 1.1.0(deep-equal@1.0.1)

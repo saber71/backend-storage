@@ -9,7 +9,8 @@ interface Body extends BaseParam {
 
 router.post("/save", async (context, next) => {
   const body: Body = context.request.body
-  const collection = getCollection(body.name, body.type)
+  const query = context.request.query
+  const collection = getCollection(body.name, body.type, query.tid as any)
   const result = await collection.save(...body.value)
   if (body.returnResult) {
     context.response.body = result

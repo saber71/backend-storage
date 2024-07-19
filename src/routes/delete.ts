@@ -10,7 +10,8 @@ interface Body extends BaseParam {
 
 router.post("/delete", async (context, next) => {
   const body: Body = context.request.body
-  const collection = getCollection(body.name, body.type)
+  const query = context.request.query
+  const collection = getCollection(body.name, body.type, query.tid as any)
   context.response.body = ""
   if (body.id) context.response.body = await collection.deleteById(body.id)
   else if (body.query) {

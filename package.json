@@ -1,6 +1,7 @@
 {
   "name": "@heraclius/backend-storage",
-  "version": "1.4.0",
+  "version": "1.4.1",
+  "private": true,
   "description": "提供了基于 Node.js 开发的 RESTful 接口，可以方便地进行数据的增删改查（CRUD）操作以及高效的数据搜索",
   "type": "module",
   "main": "dist_node/www.js",
@@ -9,7 +10,8 @@
     "watch": "vite build --watch",
     "test": "vitest run",
     "start": "node dist_node/www.js",
-    "upload": "twine upload dist/*"
+    "upload-python": "twine upload dist/*",
+    "upload": "pnpm publish && pnpm run upload-python"
   },
   "devDependencies": {
     "@heraclius/backend-bridge": "^1.1.0",

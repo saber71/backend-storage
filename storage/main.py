@@ -1,54 +1,7 @@
 import uuid
-from typing import Dict, Union
+from typing import Dict
 
 import bridge
-import fastapi
-from requests import Response
-
-
-def __check_res__(
-    res: Response,
-    status_code_mapper: Union[Dict[int, int], None] = None,
-    check: bool = True,
-):
-    """
-    根据响应对象检查HTTP请求的响应状态码。
-
-    如果设置了status_code_mapper，则会根据映射关系返回相应的状态码；
-    如果响应体是JSON格式，则将详细信息设为解析后的JSON对象；
-    如果响应体是其他格式，则将详细信息设为响应体的文本内容。
-
-    参数:
-    - res: Response对象，包含HTTP请求的响应信息。
-    - status_code_mapper: 字典类型，用于映射HTTP状态码。默认为None。
-    - check: 布尔类型，决定是否进行状态码检查。默认为True。
-
-    返回:
-    - Response对象，未经修改的响应对象。
-
-    异常:
-    - HTTPException: 如果状态码不在200-299范围内，且check为True，则抛出HTTPException异常。
-    """
-    # 当检查开启时，才进行状态码的检查
-    if check:
-        # 如果状态码不在200-299范围内
-        if res.status_code >= 300 or res.status_code < 200:
-            detail = None
-            # 如果响应头指示内容类型为JSON，则尝试解析响应体为JSON
-            if res.headers.get("Content-Type") == "application/json":
-                detail = res.json()
-            # 如果响应体不为空，则将响应体文本作为详细信息
-            elif res.text:
-                detail = res.text
-            # 如果提供了状态码映射，则使用映射状态码，否则使用原状态码
-            if status_code_mapper is None:
-                status_code_mapper = {}
-            raise fastapi.HTTPException(
-                status_code=status_code_mapper.get(res.status_code, res.status_code),
-                detail=detail,
-            )
-    # 返回原响应对象
-    return res
 
 
 def set_default_collection_type(
@@ -66,14 +19,16 @@ def set_default_collection_type(
     :param _type: 新的默认集合类型。
     :return: HTTP请求的响应。
     """
-    return __check_res__(
-        bridge.post(
-            "/storage/collection/default",
-            params={"type": _type, "tid": tid},
-        ),
-        status_code_mapper,
-        check,
+    res = bridge.post(
+        "/storage/collection/default",
+        params={"type": _type, "tid": tid},
     )
+    if check:
+        bridge.check_res(
+            res,
+            status_code_mapper,
+        )
+    return res
 
 
 def transaction_end(
@@ -91,14 +46,16 @@ def transaction_end(
     :param check: 是否要检查请求是否成功
     :return: HTTP请求的响应。
     """
-    return __check_res__(
-        bridge.post(
-            "/storage/transaction/end",
-            params={"tid": tid, "rollback": rollback},
-        ),
-        status_code_mapper,
-        check,
+    res = bridge.post(
+        "/storage/transaction/end",
+        params={"tid": tid, "rollback": rollback},
     )
+    if check:
+        bridge.check_res(
+            res,
+            status_code_mapper,
+        )
+    return res
 
 
 class TransactionContext:
@@ -142,13 +99,13 @@ class TransactionContext:
         :param check: 是否进行数据完整性检查。
         :return: 保存操作的结果。
         """
-        if status_code_mapper is None:
-            status_code_mapper = {}
-        return __check_res__(
-            bridge.post("/storage/save", json=data, params={"tid": self.__id__}),
-            status_code_mapper,
-            check,
-        )
+        res = bridge.post("/storage/save", json=data, params={"tid": self.__id__})
+        if check:
+            bridge.check_res(
+                res,
+                status_code_mapper,
+            )
+        return res
 
     def search(
         self,
@@ -164,11 +121,13 @@ class TransactionContext:
         :param check: 是否进行数据完整性检查。
         :return: 搜索结果。
         """
-        return __check_res__(
-            bridge.post("/storage/search", json=data, params={"tid": self.__id__}),
-            status_code_mapper,
-            check,
-        )
+        res = bridge.post("/storage/search", json=data, params={"tid": self.__id__})
+        if check:
+            bridge.check_res(
+                res,
+                status_code_mapper,
+            )
+        return res
 
     def delete(
         self,
@@ -184,11 +143,13 @@ class TransactionContext:
         :param check: 是否进行数据完整性检查。
         :return: 删除操作的结果。
         """
-        return __check_res__(
-            bridge.post("/storage/delete", json=data, params={"tid": self.__id__}),
-            status_code_mapper,
-            check,
-        )
+        res = bridge.post("/storage/delete", json=data, params={"tid": self.__id__})
+        if check:
+            bridge.check_res(
+                res,
+                status_code_mapper,
+            )
+        return res
 
     def get(
         self,
@@ -204,11 +165,13 @@ class TransactionContext:
         :param check: 是否进行数据完整性检查。
         :return: 获取的数据。
         """
-        return __check_res__(
-            bridge.get("/storage/get", params={**params, "tid": self.__id__}),
-            status_code_mapper,
-            check,
-        )
+        res = bridge.get("/storage/get", params={**params, "tid": self.__id__})
+        if check:
+            bridge.check_res(
+                res,
+                status_code_mapper,
+            )
+        return res
 
 
 __default_ctx__ = TransactionContext()

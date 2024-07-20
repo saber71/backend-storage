@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 requests = "*"
 setuptools = "*"
-fastapi = "*"
 backend-bridge = "*"
 
 [dev-packages]

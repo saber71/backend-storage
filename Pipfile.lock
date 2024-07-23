@@ -19,11 +19,11 @@
     "default": {
         "backend-bridge": {
             "hashes": [
-                "sha256:8a990880b5659aff21458790f512c844dbd8da836d49275b24df2fef3b0ebc68",
-                "sha256:b0d58f2838dead36cdc1d0d8d93603c1d57b832276c4410b37bac43fa5b81645"
+                "sha256:6e2ae86be4f740ee11e698f7c691e385090e8b216bc68f1fc7c94e3ec63f64a6",
+                "sha256:adf06722cbf054015f463fb1825d706bfc180e108ee33112b4fe06b72c4a6ab3"
             ],
             "index": "pypi",
-            "version": "==1.2.0"
+            "version": "==1.4.0"
         },
         "certifi": {
             "hashes": [
@@ -156,12 +156,12 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:48297e5d393a62b7cb2a10b8f76c63a73af933bd809c9e0d0d6352a1a0135dd8",
-                "sha256:ed2feca703be3bdbd94e6bb17365d91c6935c6b2a8d0bb09b66a2c435ba0b1a5"
+                "sha256:032d42ee9fb536e33087fb66cac5f840eb9391ed05637b3f2a76a7c8fb477936",
+                "sha256:33874fdc59b3188304b2e7c80d9029097ea31627180896fb549c578ceb8a0855"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==71.0.4"
+            "version": "==71.1.0"
         },
         "urllib3": {
             "hashes": [
